@@ -76,8 +76,7 @@ const Login = (props) => {
             var errorCode = error.code;
             var errorMessage = error.message;
             alert(error.toString())
-        });
-    
+        });  
     };
 
     return (
@@ -106,9 +105,6 @@ const Login = (props) => {
                         onPress={() => userLogin()}
                     >
                     </Button>
-
-                        
-
                 </View>
                 <View style={styles.containerText }>
                     <Text style={{

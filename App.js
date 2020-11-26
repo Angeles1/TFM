@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 import Login from './src/screens/Login'
 import Main from './src/screens/Main'
 import CreateAccount from './src/screens/CreateAccount'
-import LoadApp from './src/components/loadApp';
+import Legal from './src/screens/LegalScreen';
 
 function MyStack(){
   return(
@@ -19,6 +19,8 @@ function MyStack(){
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="CreateAccount" component={CreateAccount}/>
         <Stack.Screen name="Main" component={Main}/>
+        <Stack.Screen name="LegalScreen" component={Legal}/>
+
       </Stack.Navigator>
   )
 }

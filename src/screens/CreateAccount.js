@@ -59,11 +59,12 @@ const styles = StyleSheet.create({
 
 const CreateAccount = (props) => {
     const [value, onChangeText] = React.useState('Useless Placeholder');
-    const [ state, setState] = useState({
 
+    const [ state, setState] = useState({
         name:'',
         password: '',
         email:'',
+        
     });
 
     const handleChangeText = (name, value) =>{
@@ -71,15 +72,15 @@ const CreateAccount = (props) => {
     };
 
 
-    const createAccount2 = async () => {
-        await firebase.auth.createUserWithEmailAndPassword(state.email, state.password)
-            .then(() => {
-                props.navigation.navigate('Main')
-            }
-        ).catch(function(error) {
+    const checkValues = () => {
+        firebase.auth.signInWithEmailAndPassword(state.email,state.password).catch(function(error) {
             var errorCode = error.code;
             var errorMessage = error.message;
-            alert(error.toString())
+            if (errorCode === "auth/user-not-found"){
+                props.navigation.navigate('LegalScreen', {email: state.email, password: state.password})
+            }else{
+                alert(error.toString())
+            }
         });
         
     };
@@ -104,7 +105,7 @@ const CreateAccount = (props) => {
                     ></TextInput>
                 </View>
                 <View style={styles.inputGroup }>
-                    <TextInput style={styles.text} placeholder="Contraseña"
+                    <TextInput secureTextEntry={true} style={styles.text} placeholder="Contraseña"
                         onChangeText={(value) => handleChangeText('password', value)}
                     ></TextInput>
                 </View>
@@ -112,12 +113,10 @@ const CreateAccount = (props) => {
                     <Button 
                         title="Cear cuenta"
                         color="#f50087"
-                        onPress={() => createAccount2(state.email, state.password)}
+                        onPress={checkValues}
                     >
                     </Button>
-
-                        
-
+                   
                 </View>
                 <View style={styles.containerText }>
                     <Text style={{
