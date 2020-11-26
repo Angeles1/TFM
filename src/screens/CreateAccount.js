@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View,ImageBackground,Text, Button,TouchableOpacity, TextInput, SafeAreaView, StyleSheet} from 'react-native';
-import firebase from 'firebase'
-require('firebase/auth')
+import firebase from '../../database/firebase';
+
  
 const styles = StyleSheet.create({
     container: {
@@ -71,18 +71,16 @@ const CreateAccount = (props) => {
     };
 
 
-    const createAccount2 = async (pEmail, pPassword) => {
-            try {
-                const authResult = await firebase.auth().createUserWithEmailAndPassword(pEmail, pPassword);
-                 usersRef.doc(authResult.user.uid)
-                    .set({
-                        email: pEmail,
-                        created: firebase.firestore.FieldValue.serverTimestamp(),
-                      });
+    const createAccount2 = async () => {
+        await firebase.auth.createUserWithEmailAndPassword(state.email, state.password)
+            .then(() => {
+                props.navigation.navigate('Main')
             }
-            catch(error){
-                console.log(error);
-            }
+        ).catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(error.toString())
+        });
         
     };
 

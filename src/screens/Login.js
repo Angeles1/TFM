@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
 const Login = (props) => {
     const [value, onChangeText] = React.useState('Useless Placeholder');
     const [ state, setState] = useState({
-
         email:'',
         password: '',
     });
@@ -68,15 +67,17 @@ const Login = (props) => {
     };
 
 
-    const userLogin = async (email, password) => {
-        await firebase.auth.signInWithEmailAndPassword(email, password).catch(function(error) {
-            // Handle Errors here.
+    const userLogin = async () => {
+        await firebase.auth.signInWithEmailAndPassword(state.email, state.password)
+            .then(() => {
+                props.navigation.navigate('Main')
+            }
+        ).catch(function(error) {
             var errorCode = error.code;
             var errorMessage = error.message;
-            // ...
-          });
-
-            props.navigation.navigate('Main')
+            alert(error.toString())
+        });
+    
     };
 
     return (
@@ -89,20 +90,20 @@ const Login = (props) => {
             </View>
             <View style={styles.containerInput }>
                 <View style={styles.inputGroup }>
-                    <TextInput style={styles.text} placeholder="Nombre de usuario"  
+                    <TextInput  style={styles.text} placeholder="Nombre de usuario"  
                     onChangeText={(value) => handleChangeText('email', value)}
                     ></TextInput>
                 </View>
                 <View style={styles.inputGroup }>
-                    <TextInput style={styles.text} placeholder="Contraseña"
+                    <TextInput secureTextEntry={true} style={styles.text} placeholder="Contraseña"
                         onChangeText={(value) => handleChangeText('password', value)}
                     ></TextInput>
                 </View>
-                <View style={[{ padding: 0, margin:10, marginTop:30, backgroundColor: "#f50087"}]}>
+                <View>
                     <Button 
                         title="Entrar"
                         color="#f50087"
-                        onPress={() => userLogin(state.email, state.password)}
+                        onPress={() => userLogin()}
                     >
                     </Button>
 

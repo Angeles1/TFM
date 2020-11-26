@@ -17,9 +17,8 @@ function MyStack(){
 
     <Stack.Navigator>
         <Stack.Screen name="Login" component={Login}/>
-        <Stack.Screen name="Main" component={Main}/>
         <Stack.Screen name="CreateAccount" component={CreateAccount}/>
-
+        <Stack.Screen name="Main" component={Main}/>
       </Stack.Navigator>
   )
 }
@@ -38,6 +37,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    fontFamily: 'Iowan Old Style',
+    fontFamily: 'Iowan Old Style'
   },
 });
