@@ -12,14 +12,14 @@ const ImageComponent = () => {
     )
 }
 
-export default ImageComponent
+export default ImageComponent;
    
 const styles = StyleSheet.create({
     image: {
         width:'auto',
-        height: 300,
+        height: 250,
         resizeMode: "cover",
         justifyContent: "center",
       },
    
-  });
+});
