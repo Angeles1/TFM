@@ -5,6 +5,7 @@ import SurveysScreen from '../../screens/SurveysScreen'
 import SurveysResultScreen from '../../screens/SurveysResultScreen'
 import OptionsScreen from '../../screens/OptionsScreen'
 import Main from '../../screens/Main'
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 
 const Tab = createBottomTabNavigator();
@@ -12,7 +13,32 @@ const Tab = createBottomTabNavigator();
 function BottomMenuItem() {
   return (
     <Tab.Navigator 
-    initialRouteName={'Main'}
+
+    screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+
+        if (route.name === 'Home') {
+          iconName = focused
+            ? 'ios-home'
+            : 'ios-home';
+        }
+        if (route.name === 'Encuestas') {
+          iconName = focused ? 'ios-list-box' : 'ios-list-box';
+        }
+        if (route.name === 'Resultados') {
+          iconName = focused ? 'md-ribbon' : 'md-ribbon';
+        }
+        if (route.name === 'Opciones') {
+          iconName = focused ? 'ios-options' : 'ios-options';
+        }
+
+        // You can return any component that you like here!
+        return <Ionicons name={iconName} size={size} color={color} />;
+      },
+    })}
+
+    initialRouteName={'Home'}
     tabBarOptions={{
        activeTintColor: '#fff',
        inactiveTintColor: 'lightgray',
@@ -20,7 +46,8 @@ function BottomMenuItem() {
        inactiveBackgroundColor: '#b55031',
            style: {
                  backgroundColor: '#CE4418',
-                 paddingBottom: 3
+                 paddingBottom: 3,
+                 height:80
            }
     }}
     
