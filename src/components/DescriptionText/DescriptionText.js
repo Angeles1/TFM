@@ -9,15 +9,13 @@ const DescriptionText = (props) => {
   const bodyText = props.text;
 
   return (
-    <Text style={styles.baseText}>
-      <Text numberOfLines={5}>{bodyText}</Text>
-    </Text>
+      <Text style={styles.baseText} numberOfLines={5}>{bodyText}</Text>
   );
 };
 
 const styles = StyleSheet.create({
   baseText: {
-    margin:22,
+    margin:20,
     marginTop: 5,
 },
 });
