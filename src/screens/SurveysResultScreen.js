@@ -2,13 +2,12 @@ import React from 'react'
 import { View, Text} from 'react-native'
 
 
-const Main = () => {
+const SurveysResultScreeen = () => {
     return (
         <View>
-            <Text>Main</Text>
+            <Text>SurveysResultScreeen</Text>
         </View>
     )
 }
 
-export default Main
-
+export default SurveysResultScreeen
