@@ -18,7 +18,7 @@ import BottomMenuItem from './src/components/BottomMenuItem/BottomMenuItem';
 function LogoTitle() {
   return (
     <Image
-      style={{ width: 50, height: 50 , alignSelf:'flex-end'}}
+      style={{ width: 50, height: 50 }}
       source={require('./Image/loginilustration.jpg')}
     />
     
@@ -29,8 +29,16 @@ function LogoTitle() {
 function MyStack(){
   return(
 
-    <Stack.Navigator>
-        <Stack.Screen name="Main" component={BottomMenuItem} />
+    <Stack.Navigator screenOptions={{
+      headerStyle: {
+        backgroundColor: '#f50087',
+      },
+      headerTintColor: '#fff',
+      headerRight:( props) => (<LogoTitle {...props}/>)  ,
+      headerLeft: (props) => (<LogoTitle {...props} />),
+    }}>
+        <Stack.Screen name="Main" component={BottomMenuItem}  
+        />
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="CreateAccount" component={CreateAccount}/>
         <Stack.Screen name="LegalScreen" component={Legal}/>
