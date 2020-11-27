@@ -11,7 +11,20 @@ const Tab = createBottomTabNavigator();
 
 function BottomMenuItem() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator 
+    initialRouteName={'Main'}
+    tabBarOptions={{
+       activeTintColor: '#fff',
+       inactiveTintColor: 'lightgray',
+       activeBackgroundColor: '#c4461c',
+       inactiveBackgroundColor: '#b55031',
+           style: {
+                 backgroundColor: '#CE4418',
+                 paddingBottom: 3
+           }
+    }}
+    
+    >
       <Tab.Screen name="Home" component={Main} />
       <Tab.Screen name="Encuestas" component={SurveysScreen} />
       <Tab.Screen name="Resultados" component={SurveysResultScreen} />

@@ -1,8 +1,9 @@
 import React from 'react';
-Tapbimport { StyleSheet, Text, View , Image} from 'react-native';
+import { StyleSheet, Text, View , Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import 'react-native-gesture-handler';
+
 
 
 const Stack = createStackNavigator();
@@ -20,6 +21,7 @@ function LogoTitle() {
       style={{ width: 50, height: 50 , alignSelf:'flex-end'}}
       source={require('./Image/loginilustration.jpg')}
     />
+    
   );
 }
 
@@ -28,16 +30,7 @@ function MyStack(){
   return(
 
     <Stack.Navigator>
-        <Stack.Screen name="BottomMenuItem" component={BottomMenuItem} 
-        options={{
-          headerTitle: props => <LogoTitle {...props} /> ,
-          headerStyle:  {
-            backgroundColor: '#f50087',
-          },
-          headerTintColor: '#fff',
-        }}
-        />
-        <Stack.Screen name="Main" component={Main}/>
+        <Stack.Screen name="Main" component={BottomMenuItem} />
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="CreateAccount" component={CreateAccount}/>
         <Stack.Screen name="LegalScreen" component={Legal}/>
