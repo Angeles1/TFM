@@ -8,13 +8,13 @@ import GridCustom from '../components/GridCustom/GridCustom'
 
 const OptionsScreen = () => {
     return (
-        <View>
+        <ScrollView>
             <Image></Image>
             <DescriptionText text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu mauris et ante iaculis venenatis."></DescriptionText>
             <ScrollView>
             <GridCustom></GridCustom>
             </ScrollView>
-        </View>
+        </ScrollView>
     )
 }
 

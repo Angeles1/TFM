@@ -4,7 +4,7 @@ import Image from '../../src/components/Image/Image'
 import DescriptionText from '../components/DescriptionText/DescriptionText'
 
 
-const SurveysResultScreeen = () => {
+const Example = () => {
     return (
         <View>
              <View >
@@ -16,4 +16,4 @@ const SurveysResultScreeen = () => {
     )
 }
 
-export default SurveysResultScreeen;
+export default Example;
