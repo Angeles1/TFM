@@ -6,7 +6,47 @@ import Chart from '../components/Chart/Chart'
 
 
 const Main = () => {
-    
+    let sampleData = [
+        {
+          seriesName: 'series1',
+          data: [
+            {x: '2018-02-01', y: 30},
+            {x: '2018-02-02', y: 200},
+            {x: '2018-02-03', y: 170},
+            {x: '2019-02-04', y: 250},
+            {x: '2019-03-04', y: 120},
+            {x: '2019-03-05', y: 290},
+
+        ],
+          color: '#297AB1'
+        },
+        {
+          seriesName: 'series2',
+          data: [
+            {x: '2018-02-01', y: 20},
+            {x: '2018-02-02', y: 100},
+            {x: '2018-02-03', y: 140},
+            {x: '2019-02-04', y: 550},
+            {x: '2019-03-05', y: 30}
+        ],
+          color: 'green'
+        },
+        {
+            seriesName: 'series3',
+            data: [
+              {x: '2018-03-01', y: 10},
+              {x: '2018-03-02', y: 300},
+              {x: '2018-03-03', y: 40},
+              {x: '2019-03-04', y: 350},
+              {x: '2019-03-04', y: 50},
+              {x: '2019-03-05', y: 500},
+
+            ],
+            color: 'gray'
+          },
+          
+      ];
+
       
     return (
         <ScrollView>
@@ -15,7 +55,7 @@ const Main = () => {
                 <DescriptionText text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu mauris et ante iaculis venenatis."></DescriptionText>
             </View>
             <ScrollView>
-                <Chart ></Chart>
+                <Chart collectedData = {sampleData}></Chart>
             </ScrollView>
         </ScrollView>
     )
@@ -24,7 +64,6 @@ const Main = () => {
 const styles = StyleSheet.create({
     container: {
         flex:1,
-        backgroundColor: "#ffc0eb",
     },
     chart:{
         flex:1,

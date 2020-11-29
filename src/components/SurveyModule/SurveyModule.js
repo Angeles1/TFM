@@ -12,7 +12,7 @@ const SurveyModule = () => {
             <Grid style={styles.container}>
                 <Row>
                     <Col>
-                        <Image style={styles.tinyLogo} source={{ uri: 'https://reactnative.dev/img/tiny_logo.png'}}/>        
+                        <Image style={styles.tinyLogo} source={{ uri: 'https://reactnative.dev/img/tiny_logo.png',}}/>        
                     </Col>
                     <Col>
                         <Row style={{alignItems: 'center'}}>
@@ -23,7 +23,7 @@ const SurveyModule = () => {
                             </Col>
                             <Col  size={1}>
                                 <TouchableOpacity>
-                                    <Ionicons name='md-ribbon'size='150%' color='gray' />
+                                    <Ionicons name='ios-add-circle-outline' size= {30} color='gray' />
                                 </TouchableOpacity>
                             </Col>
                         </Row>
@@ -34,8 +34,8 @@ const SurveyModule = () => {
                                 </TouchableOpacity>
                             </Col >
                             <Col  size={1} style={{ marginTop:10}}>
-                                <TouchableOpacity>
-                                    <Ionicons name='md-ribbon'size='150%' color='gray' />
+                                <TouchableOpacity >
+                                    <Ionicons name='ios-add-circle-outline' size= {30} color='gray' />
                                 </TouchableOpacity>
                             </Col>
                         </Row>

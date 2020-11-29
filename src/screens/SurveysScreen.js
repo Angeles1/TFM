@@ -8,24 +8,20 @@ import SurveyModule from '../components/SurveyModule/SurveyModule'
 const SurveysScreeen = () => {
     return (
         <ScrollView>
-        <View >
+            <View >
                 <Image></Image>
                 <DescriptionText text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu mauris et ante iaculis venenatis."></DescriptionText>
             </View>
-            <ScrollView>
                 <View style={{ borderBottomColor: 'black', borderBottomWidth: 1,}}/>
-                <SurveyModule>
-                </SurveyModule>
+                    <SurveyModule>
+                    </SurveyModule>
                 <View style={{ borderBottomColor: 'black', borderBottomWidth: 1,}}/>
-                <SurveyModule>
-                </SurveyModule>
+                    <SurveyModule>
+                    </SurveyModule>
                 <View style={{ borderBottomColor: 'black', borderBottomWidth: 1,}}/>
-                <SurveyModule>
-                </SurveyModule>
+                    <SurveyModule>
+                    </SurveyModule>
                 <View style={{ borderBottomColor: 'black', borderBottomWidth: 1,}}/>
-               
-            </ScrollView>
-            
             </ScrollView>
     )
 }
