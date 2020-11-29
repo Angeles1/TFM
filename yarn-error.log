@@ -47,6 +47,7 @@ npm manifest:
       "react-native-onboarding-component": "0.0.5",
       "react-native-onboarding-swiper": "^1.1.4",
       "react-native-paper": "^4.4.1",
+      "react-native-pure-chart": "0.0.24",
       "react-native-reanimated": "~1.13.0",
       "react-native-safe-area-context": "3.1.4",
       "react-native-screens": "~2.10.1",

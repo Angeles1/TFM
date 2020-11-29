@@ -1,6 +1,8 @@
 import React from 'react'
-import {View, Text, Image, StyleSheet} from 'react-native'
+import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native'
 import { Col, Row, Grid } from "react-native-easy-grid";
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 
 
 const SurveyModule = () => {
@@ -10,20 +12,32 @@ const SurveyModule = () => {
             <Grid style={styles.container}>
                 <Row>
                     <Col>
-                        <Image style={styles.tinyLogo} source={{ uri: 'https://reactnative.dev/img/tiny_logo.png',}}/>        
+                        <Image style={styles.tinyLogo} source={{ uri: 'https://reactnative.dev/img/tiny_logo.png'}}/>        
                     </Col>
                     <Col>
-                        <Row>
-                        <Col>
-                            <Text>Comenzar</Text></Col>
-                            <Col>
-                            <Text>Comenzar</Text></Col>
+                        <Row style={{alignItems: 'center'}}>
+                            <Col  size={3} >
+                                <TouchableOpacity>
+                                    <Text>          Comenzar</Text>
+                                </TouchableOpacity>
+                            </Col>
+                            <Col  size={1}>
+                                <TouchableOpacity>
+                                    <Ionicons name='md-ribbon'size='150%' color='gray' />
+                                </TouchableOpacity>
+                            </Col>
                         </Row>
                         <Row> 
-                            <Col>
-                            <Text>Continuar</Text></Col>
-                            <Col>
-                            <Text>Continuar</Text></Col>
+                            <Col  size={3} style={{ marginTop:10}}>
+                                <TouchableOpacity>
+                                    <Text>          Continuar</Text>
+                                </TouchableOpacity>
+                            </Col >
+                            <Col  size={1} style={{ marginTop:10}}>
+                                <TouchableOpacity>
+                                    <Ionicons name='md-ribbon'size='150%' color='gray' />
+                                </TouchableOpacity>
+                            </Col>
                         </Row>
                     </Col>
                     
@@ -34,13 +48,12 @@ const SurveyModule = () => {
 }
 
 
-
   const styles = StyleSheet.create({
     containerView:{
         margin:2,
     },
     tinyLogo: {
-      width: 150,
+      width: 200,
       height: 90,
     },
     
