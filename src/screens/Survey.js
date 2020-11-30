@@ -9,7 +9,7 @@ const Survey = () => {
         <View>
              <View >
                 <Image></Image>
-                <DescriptionText text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu mauris et ante iaculis venenatis."></DescriptionText>
+                <DescriptionText text="SURVEY Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu mauris et ante iaculis venenatis."></DescriptionText>
             </View>
           
         </View>
