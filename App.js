@@ -46,8 +46,8 @@ function MyStack(){
         headerRight:( props) => (<LogoTitle {...props}/>)  ,
         headerLeft: (props) => (<LogoTitle {...props} />),
       }}>
-          <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
           <Stack.Screen name="Main" component={BottomMenuItem}  />
+          <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
 
           <Stack.Screen name="CreateAccount" component={CreateAccount} options={{headerShown: false}}/>
           <Stack.Screen name="LegalScreen" component={Legal} options={{headerShown: false}} />

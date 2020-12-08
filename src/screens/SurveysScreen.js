@@ -1,12 +1,13 @@
 import React from 'react'
-import { View, StyleSheet} from 'react-native'
+import { View, StyleSheet, Image} from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import Image from '../../src/components/Image/Image'
+import ImageWall from '../../src/components/Image/Image'
 import DescriptionText from '../components/DescriptionText/DescriptionText'
 import SurveyModule from '../components/SurveyModule/SurveyModule'
 import { NavigationContainer, TabNavigator} from '@react-navigation/native';
 import { withNavigation } from 'react-navigation';
 import { ProgressBar, Colors } from 'react-native-paper';
+import { Col, Row, Grid } from "react-native-easy-grid";
 
 
 const SurveysScreeen = ({ navigation }) => {
@@ -14,11 +15,21 @@ const SurveysScreeen = ({ navigation }) => {
     return (
         <ScrollView>
             <View >
-                <Image></Image>
+                <ImageWall></ImageWall>
                 <View>
                     <DescriptionText text="Tu progreso esta semana es:"></DescriptionText>
-                    <View  style={styles.containerLoaderBar}>
-                    <ProgressBar progress={0.5} color={Colors.red900}/>
+                    <View style={styles.containerLoaderBar}>
+                    <Grid style={styles.container}>
+                    <Row>
+                        <Col size={85}>
+                            <ProgressBar progress={0.5} color={Colors.red900}/>
+                        </Col>
+                        <Col size={15}>
+                            <Image style={styles.tinyLogo} source={{ uri: 'https://reactnative.dev/img/tiny_logo.png',}}/>        
+                        </Col>
+                    </Row>
+                    </Grid>
+
                     </View>
                 </View>
                 
@@ -47,6 +58,11 @@ const styles = StyleSheet.create({
         margin:10,
         marginTop: 0,
         borderRadius: 10,
+        alignItems: 'center'
     },
+    tinyLogo: {
+        width: 50,
+        height: 20,
+      },
 
 });
