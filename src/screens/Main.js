@@ -56,6 +56,7 @@ const Main = () => {
             </View>
             <ScrollView>
                 <Chart collectedData = {sampleData}></Chart>
+                
             </ScrollView>
         </ScrollView>
     )
@@ -71,7 +72,6 @@ const styles = StyleSheet.create({
 
     }
   });
-
 
 export default Main;
    

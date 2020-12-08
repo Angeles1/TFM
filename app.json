@@ -18,14 +18,14 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.angelesuoc.tfm",
+      "bundleIdentifier": "com.angelesuoc.tfm"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF",
+        "backgroundColor": "#FFFFFF"
       },
-      "package": "com.angelesuoc.tfm",
+      "package": "com.angelesuoc.tfm"
 
     },
     "web": {

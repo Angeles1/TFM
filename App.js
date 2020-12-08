@@ -1,9 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View , Image, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-
 import { createStackNavigator } from '@react-navigation/stack';
-
 
 const Stack = createStackNavigator();
 
@@ -12,7 +10,10 @@ import Main from './src/screens/Main'
 import CreateAccount from './src/screens/CreateAccount'
 import Legal from './src/screens/LegalScreen';
 import BottomMenuItem from './src/components/BottomMenuItem/BottomMenuItem';
+import SurveyCompleted from './src/components/SurveyCompletedScreen/SurveyCompletedScreen';
+
 import Survey from './src/screens/Survey';
+
 
 var OnBoardingScreen;
 
@@ -32,24 +33,29 @@ function LogoTitle() {
 }
 
 
+
 function MyStack(){
   return(
-    <Stack.Navigator 
-      screenOptions={{
-      headerStyle: {
-        backgroundColor: '#f50087',
-      },
-      headerTintColor: '#fff',
-      headerRight:( props) => (<LogoTitle {...props}/>)  ,
-      headerLeft: (props) => (<LogoTitle {...props} />),
-    }}>
-        <Stack.Screen name="Main" component={BottomMenuItem}/>
-        <Stack.Screen name="Login" component={Login}/>
-        <Stack.Screen name="CreateAccount" component={CreateAccount}/>
-        <Stack.Screen name="LegalScreen" component={Legal}/>
-        <Stack.Screen name="Survey" component={Survey}/>
 
-      </Stack.Navigator>
+      <Stack.Navigator 
+        screenOptions={{
+        headerStyle: {
+          backgroundColor: '#f50087',
+        },
+        headerTintColor: '#fff',
+        headerRight:( props) => (<LogoTitle {...props}/>)  ,
+        headerLeft: (props) => (<LogoTitle {...props} />),
+      }}>
+          <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
+          <Stack.Screen name="Main" component={BottomMenuItem}  />
+
+          <Stack.Screen name="CreateAccount" component={CreateAccount} options={{headerShown: false}}/>
+          <Stack.Screen name="LegalScreen" component={Legal} options={{headerShown: false}} />
+          <Stack.Screen name="Survey" component={Survey} options={{headerShown: false}} />    
+          <Stack.Screen name="SurveyCompleted" component={SurveyCompleted} options={{headerShown: false}} />    
+
+        </Stack.Navigator>
+
   )
 }
 
@@ -61,10 +67,11 @@ if(Platform.OS === 'android' ){
 }
 
 
+
 export default function App() {
   return (   
     <NavigationContainer>
-      <MyStack></MyStack>
+      <MyStack></MyStack>    
     </NavigationContainer>
   );
 }

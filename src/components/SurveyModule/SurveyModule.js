@@ -1,13 +1,10 @@
 import React from 'react'
-import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native'
+import {View, Text, Image, StyleSheet, TouchableOpacity, Linking, Button} from 'react-native'
 import { Col, Row, Grid } from "react-native-easy-grid";
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Survey from '../../../src/screens/Survey'
-import { NavigationContainer } from '@react-navigation/native';
 
 
-
-const SurveyModule = (pros) => {
+const SurveyModule = ({ navigation }) => {
        return (
         <View style={styles.containerView}>
 
@@ -20,7 +17,7 @@ const SurveyModule = (pros) => {
                         <Row style={{alignItems: 'center'}}>
                             <Col  size={3} >
                                 <TouchableOpacity>
-                                    <Text  onPress={() => this.props.navigation.navigate('Survey')}>          Comenzar</Text>
+                                    <Text onPress={() => navigation.navigate('Survey')}>         Comenzar</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col  size={1}>
