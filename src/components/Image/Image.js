@@ -4,7 +4,7 @@ import { View, Text,Image, StyleSheet} from 'react-native'
 
 const ImageComponent = () => {
     return (
-        <Image source={require('../../../Image/loginilustration.jpg')}  style={styles.image}>
+        <Image source={require('../../../Image/loginilustration2.png')}  style={styles.image}>
         </Image>
 
     )

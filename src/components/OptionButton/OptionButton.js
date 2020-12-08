@@ -12,9 +12,35 @@ const styles = StyleSheet.create({
   });
 
 const ObtionButton = (props) => {
+
+
+  var image;
+    if (props.ruta === 'MiCuenta') {
+      image=require('../../../Image/OptionsAccount.png');
+    }
+
+    if (props.ruta === 'Tutorial') {
+      image=require('../../../Image/OptionsHOwWork.png');
+    }
+    if (props.ruta === 'Contacto') {
+      image=require('../../../Image/optionsWritte.png');
+    }
+    if (props.ruta === 'AvisoLegal') {
+      image=require('../../../Image/optionsLegal.png');
+    }
+    if (props.ruta === 'ElEquipo') {
+      image=require('../../../Image/OptionsAboutUs.png');
+    }
+    if (props.ruta === 'CerrarSesion') {
+      image=require('../../../Image/OptionsClose.png');
+    }
+
+
+
+
     return (
         <TouchableOpacity onPress={()=> alert('image clicked'+ props.ruta)}>
-            <Image style={styles.tinyLogo} source={{ uri: 'https://reactnative.dev/img/tiny_logo.png',}}/>        
+            <Image style={styles.tinyLogo} source={image}/>        
         </TouchableOpacity>
     )
 }

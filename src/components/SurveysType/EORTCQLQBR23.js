@@ -6,6 +6,7 @@ import firebase from '../../../database/firebase';
 const GREEN = 'rgba(141,196,63,1)';
 const PURPLE = 'rgba(108,48,237,1)';
 
+//Generamos const segun la encuesta seleccionada en nameID
 
 const survey = [
     {
@@ -82,6 +83,7 @@ export default class EORTCQLQBR23 extends Component {
 
     constructor(props, { navigation }) {
         super(props);
+        console.log("ENCUESTA "+props.nameID)
         this.state = { backgroundColor: PURPLE, answersSoFar: '' };
     }
 

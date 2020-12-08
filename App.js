@@ -27,8 +27,8 @@ if (Platform.OS === 'android') {
 function LogoTitle() {
   return (
     <Image
-      style={{ width: 50, height: 50 }}
-      source={require('./Image/loginilustration.jpg')}
+      style={{ width: 60, height: 70 }}
+      source={require('./Image/logoRibbon.png')}
     />
     
   );
@@ -41,10 +41,11 @@ function MyStack(){
 
       <Stack.Navigator 
         screenOptions={{
+          title: "Seguimiento de Calidad de vida",
         headerStyle: {
-          backgroundColor: PINK,
+          backgroundColor: SWEETPINK,
         },
-        headerTintColor: PINK,
+        headerTintColor: "white",
         headerRight:( props) => (<LogoTitle {...props}/>)  ,
         //headerLeft: (props) => (<LogoTitle {...props} />),
       }}>

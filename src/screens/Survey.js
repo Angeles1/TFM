@@ -1,18 +1,16 @@
 import React from 'react'
-import { View, Text} from 'react-native'
-import Image from '../../src/components/Image/Image'
-import DescriptionText from '../components/DescriptionText/DescriptionText'
 import EORTCQLQBR23 from '../components/SurveysType/EORTCQLQBR23'
 import { withNavigation } from 'react-navigation';
 
 
 
-const Survey = ({ navigation }) => {
+const Survey = ( {route, navigation }) => {
+  const { nameID } = route.params;
+       
     return (
-        <View>
-          <EORTCQLQBR23 navigation={navigation}></EORTCQLQBR23>
-        </View>
+     
+          <EORTCQLQBR23 nameID= {JSON.stringify(nameID)} navigation={navigation}></EORTCQLQBR23>
     )
 }
 
-export default withNavigation(EORTCQLQBR23);
+export default withNavigation(Survey);

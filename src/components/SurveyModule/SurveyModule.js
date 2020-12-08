@@ -3,45 +3,54 @@ import {View, Text, Image, StyleSheet, TouchableOpacity, Linking, Button} from '
 import { Col, Row, Grid } from "react-native-easy-grid";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+const PINK = 'rgba(213,0,249 ,1)';
 
-const SurveyModule = ({ navigation }) => {
+const SurveyModule = ({nameID, imagenURL, navigation}) => {
+var image;
+if (nameID === 'BR23') {
+    image=require('../../../Image/BR23.png');
+  }
+  if (nameID === 'TIL') {
+    image= require('../../../Image/TIL.png');
+  }
+  if (nameID === 'HADS') {
+    image=require('../../../Image/HADS.png');
+  }
+  if (nameID === 'BR45') {
+    image=require('../../../Image/BR45.png');
+  }
+  if (nameID === 'BRECON23') {
+    image=require('../../../Image/BRECON23.png');
+  }
+   
        return (
         <View style={styles.containerView}>
-
             <Grid style={styles.container}>
                 <Row>
                     <Col>
-                        <Image style={styles.tinyLogo} source={{ uri: 'https://reactnative.dev/img/tiny_logo.png',}}/>        
+                        <Image  source={image} style={styles.tinyLogo}/>
                     </Col>
                     <Col>
                         <Row style={{alignItems: 'center'}}>
                             <Col  size={3} >
                                 <TouchableOpacity>
-                                    <Text onPress={() => navigation.navigate('Survey')}>         Comenzar</Text>
+                                    <Text  style={styles.texto} onPress={() =>
+                                        navigation.navigate('Survey',
+                                        {
+                                            nameID: nameID,
+                                        }
+                                        )}>Comenzar</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col  size={1}>
                                 <TouchableOpacity>
-                                    <Ionicons name='ios-add-circle-outline' size= {30} color='gray' />
+                                    <Ionicons name='ios-add-circle-outline' size= {30} color= {PINK} />
                                 </TouchableOpacity>
                             </Col>
                         </Row>
-                        <Row> 
-                            <Col  size={3} style={{ marginTop:10}}>
-                                <TouchableOpacity>
-                                    <Text>          Continuar</Text>
-                                </TouchableOpacity>
-                            </Col >
-                            <Col  size={1} style={{ marginTop:10}}>
-                                <TouchableOpacity >
-                                    <Ionicons name='ios-add-circle-outline' size= {30} color='gray' />
-                                </TouchableOpacity>
-                            </Col>
-                        </Row>
-                    </Col>
-                    
+                    </Col>    
                 </Row>
-            </Grid>
+            </Grid>   
         </View>
    )
 }
@@ -57,9 +66,10 @@ const SurveyModule = ({ navigation }) => {
     },
     
     container:{
-        margin:20,
-        marginTop: 0,
-        marginBottom:3,
+        margin:10,
+        marginTop: 3,
+        marginBottom:0,
+        backgroundColor:"white"
      
       },
     containerCol:{
@@ -73,6 +83,11 @@ const SurveyModule = ({ navigation }) => {
         alignItems: 'center',
   
       },
+      texto:{
+        fontWeight: 'bold',
+        color: PINK,
+        fontSize:18,
+    }
 })
 
 export default SurveyModule;
