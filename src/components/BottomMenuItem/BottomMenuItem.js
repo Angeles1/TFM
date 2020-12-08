@@ -7,7 +7,8 @@ import OptionsScreen from '../../screens/OptionsScreen'
 import Main from '../../screens/Main'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-
+const PINK = 'rgba(213,0,249 ,1)';
+const SWEETPINK = 'rgba(234,128,252 ,1)';
 const Tab = createBottomTabNavigator();
 
 function BottomMenuItem() {
@@ -40,12 +41,12 @@ function BottomMenuItem() {
 
     initialRouteName={'Home'}
     tabBarOptions={{
-       activeTintColor: '#fff',
-       inactiveTintColor: 'lightgray',
-       activeBackgroundColor: '#c4461c',
-       inactiveBackgroundColor: '#b55031',
+       activeTintColor: 'white',
+       inactiveTintColor: 'black',
+       activeBackgroundColor: PINK,
+       inactiveBackgroundColor: SWEETPINK,
            style: {
-                 backgroundColor: '#CE4418',
+                 backgroundColor: SWEETPINK,
                  paddingBottom: 3,
                  height:80
            }

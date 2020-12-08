@@ -9,26 +9,26 @@ const GridCustom = () => {
         <Grid style={styles.container}>
             <Col style={styles.containerCol}>
                 <Row style={styles.containerRow}>
-                    <OptionButton></OptionButton>
+                    <OptionButton ruta="MiCuenta" imagen="" ></OptionButton>
                 </Row>
                 <Row style={styles.containerRow}>
-                    <OptionButton></OptionButton>
+                    <OptionButton ruta="Tutorial" imagen=""></OptionButton>
                 </Row>
             </Col>
             <Col style={styles.containerCol}>
                 <Row style={styles.containerRow}>
-                    <OptionButton></OptionButton>
+                    <OptionButton ruta="Contacto" imagen=""></OptionButton>
                 </Row>
                 <Row style={styles.containerRow}>
-                    <OptionButton></OptionButton>
+                    <OptionButton ruta="AvisoLegal" imagen=""></OptionButton>
                 </Row>            
             </Col>
             <Col style={styles.containerCol}>
                 <Row style={styles.containerRow}>
-                    <OptionButton></OptionButton>
+                    <OptionButton ruta="El equipo" imagen=""></OptionButton>
                 </Row>                
                 <Row style={styles.containerRow}>
-                    <OptionButton></OptionButton>
+                    <OptionButton ruta="CerrarSesion" imagen=""></OptionButton>
                 </Row>
             </Col>
         </Grid>

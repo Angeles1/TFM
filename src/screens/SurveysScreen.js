@@ -4,9 +4,10 @@ import { ScrollView } from 'react-native-gesture-handler'
 import ImageWall from '../../src/components/Image/Image'
 import DescriptionText from '../components/DescriptionText/DescriptionText'
 import SurveyModule from '../components/SurveyModule/SurveyModule'
+
 import { NavigationContainer, TabNavigator} from '@react-navigation/native';
 import { withNavigation } from 'react-navigation';
-import { ProgressBar, Colors } from 'react-native-paper';
+import { ProgressBar, Colors,Divider } from 'react-native-paper';
 import { Col, Row, Grid } from "react-native-easy-grid";
 
 
@@ -18,11 +19,11 @@ const SurveysScreeen = ({ navigation }) => {
                 <ImageWall></ImageWall>
                 <View>
                     <DescriptionText text="Tu progreso esta semana es:"></DescriptionText>
-                    <View style={styles.containerLoaderBar}>
+                    <View margin={10} marginTop={0} >
                     <Grid style={styles.container}>
                     <Row>
                         <Col size={85}>
-                            <ProgressBar progress={0.5} color={Colors.red900}/>
+                            <ProgressBar  progress={0.5}  color={Colors.pink500}/>
                         </Col>
                         <Col size={15}>
                             <Image style={styles.tinyLogo} source={{ uri: 'https://reactnative.dev/img/tiny_logo.png',}}/>        
@@ -35,14 +36,18 @@ const SurveysScreeen = ({ navigation }) => {
                 
             </View>
             
-                <View style={{ borderBottomColor: 'black', borderBottomWidth: 1,}}/>
-                    <SurveyModule navigation={navigation} />
-                <View style={{ borderBottomColor: 'black', borderBottomWidth: 1,}}/>
-                    <SurveyModule navigation={navigation} />
-                <View style={{ borderBottomColor: 'black', borderBottomWidth: 1,}}/>
-                    <SurveyModule navigation={navigation} />
-                <View style={{ borderBottomColor: 'black', borderBottomWidth: 1,}}/>
-            </ScrollView>
+            <Divider />
+                <SurveyModule navigation={navigation} nameID="HADS" />
+            <Divider />
+                <SurveyModule navigation={navigation} nameID="TIL"/>
+            <Divider />
+                <SurveyModule navigation={navigation} nameID="BR23"/>
+            <Divider />
+                <SurveyModule navigation={navigation} nameID="BR45"/>
+            <Divider />
+                <SurveyModule navigation={navigation} nameID="CON23"/>
+            <Divider />
+        </ScrollView>
     )
 }
 
@@ -52,13 +57,15 @@ export default withNavigation(SurveysScreeen);
 
 
 const styles = StyleSheet.create({
-    containerLoaderBar: {
+    container: {
         padding: 7,
         paddingTop: 0,
         margin:10,
         marginTop: 0,
+        marginBottom:0,
         borderRadius: 10,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     tinyLogo: {
         width: 50,

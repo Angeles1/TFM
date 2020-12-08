@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View,ImageBackground,Text, Button,TouchableOpacity, TextInput, SafeAreaView, StyleSheet} from 'react-native';
 import firebase from '../../database/firebase';
+import MyTextInput from '../components/TextInput/TextInput'
 
  
 const styles = StyleSheet.create({
@@ -93,6 +94,7 @@ const Login = (props) => {
                     onChangeText={(value) => handleChangeText('email', value)}
                     ></TextInput>
                 </View>
+
                 <View style={styles.inputGroup }>
                     <TextInput secureTextEntry={true} style={styles.text} placeholder="Contraseña"
                         onChangeText={(value) => handleChangeText('password', value)}

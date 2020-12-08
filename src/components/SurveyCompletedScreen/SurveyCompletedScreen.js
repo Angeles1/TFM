@@ -32,7 +32,7 @@ class SurveyCompletedScreen extends Component {
                     <ScrollView>
                        
                         <Button
-                            onPress={this.props.navigation.navigate('Home')}
+                            onPress={this.props.navigation.navigate('Main')}
                             color={GREEN}
                             backgroundColor={GREEN}
                             title={'CERRAR'}

@@ -14,6 +14,8 @@ import SurveyCompleted from './src/components/SurveyCompletedScreen/SurveyComple
 
 import Survey from './src/screens/Survey';
 
+const PINK = 'rgba(213,0,249 ,1)';
+const SWEETPINK = 'rgba(234,128,252 ,1)';
 
 var OnBoardingScreen;
 
@@ -40,11 +42,11 @@ function MyStack(){
       <Stack.Navigator 
         screenOptions={{
         headerStyle: {
-          backgroundColor: '#f50087',
+          backgroundColor: PINK,
         },
-        headerTintColor: '#fff',
+        headerTintColor: PINK,
         headerRight:( props) => (<LogoTitle {...props}/>)  ,
-        headerLeft: (props) => (<LogoTitle {...props} />),
+        //headerLeft: (props) => (<LogoTitle {...props} />),
       }}>
           <Stack.Screen name="Main" component={BottomMenuItem}  />
           <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
